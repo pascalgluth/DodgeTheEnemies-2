@@ -1,3 +1,4 @@
+use raylib::misc::AsF32;
 use raylib::prelude::*;
 
 use crate::game::Game;
@@ -22,7 +23,8 @@ impl Hud {
 
     }
 
-    pub fn render(&self, gfx: &mut RaylibDrawHandle, player: &Player) {
+    pub fn render(&self, gfx: &mut RaylibDrawHandle, player: &Player, level:i32) {
         gfx.draw_text(format!("Health: {}", player.health).as_str(), 10, self.window_height-40, 30, Color::WHITE);
+        gfx.draw_text(format!("Level: {}", level).as_str(), self.window_width-measure_text("Level: 00", 30)-5, self.window_height-40, 30, Color::WHITE);
     }
 }

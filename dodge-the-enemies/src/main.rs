@@ -3,6 +3,7 @@ mod game;
 mod game_state;
 mod hud;
 mod enemy;
+mod menu;
 
 use std::ptr::null;
 use raylib::prelude::*;
